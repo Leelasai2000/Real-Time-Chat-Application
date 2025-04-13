@@ -26,21 +26,17 @@ jobs:
           git config --global user.name "GitHub CI"
 
       - name: Install Backend Dependencies
-        run: |
-          cd Server
-          npm install
+        run: npm install
+        working-directory: ./Server
 
       - name: Install Frontend Dependencies
-        run: |
-          cd client
-          npm install
+        run: npm install
+        working-directory: ./client
 
       - name: Run Backend Tests
-        run: |
-          cd Server
-          npm test
+        run: npm test
+        working-directory: ./Server
 
       - name: Run Frontend Tests
-        run: |
-          cd client
-          npm test
+        run: npm test
+        working-directory: ./client
